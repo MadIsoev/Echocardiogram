@@ -20,7 +20,7 @@ with st.expander('Data'):
   st.dataframe(X_raw)
 
   st.write("y")
-  y_raw = df.still-alive
+  y_raw = df['still-alive']
   st.dataframe(y_raw)
 
 
