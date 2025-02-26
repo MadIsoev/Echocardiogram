@@ -6,7 +6,7 @@ st.title('Echocardiogram')
 
 st.write('Анализ набора данных Echocardiogram')
 
-df = pd.read_csv("echocardiogram.data")
+df = pd.read_csv("echocardiogram.data", sep=",", header=None, na_values="?", on_bad_lines="skip")
 
 with st.expander('Data'):
   st.write("X")
@@ -16,5 +16,12 @@ with st.expander('Data'):
   st.write("y")
   y_raw = df.species
   st.dataframe(y_raw)
+
+
+
+
+
+
+
 
 
