@@ -68,7 +68,9 @@ X_test = scaler.transform(X_test)
 clf = RandomForestClassifier(random_state=42)
 clf.fit(X_train, y_train)
 
-df_input_scaled = pd.DataFrame(scaler.transform(input_df), columns=input_df.columns)
+input_df_aligned = pd.DataFrame(columns=X_raw.columns)
+input_df_aligned = pd.concat([input_df_aligned, input_df], ignore_index=True).fillna(0)
+df_input_scaled = pd.DataFrame(scaler.transform(input_df_aligned), columns=X_raw.columns)
 prediction = clf.predict(df_input_scaled)
 prediction_proba = clf.predict_proba(df_input_scaled)
 
