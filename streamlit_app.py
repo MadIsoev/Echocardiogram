@@ -95,7 +95,9 @@ st.plotly_chart(fig2)
 # Correlation Heatmap
 st.subheader("🔎 Feature Correlations")
 fig, ax = plt.subplots()
-sns.heatmap(df.corr(), annot=True, cmap='coolwarm', fmt='.2f', ax=ax)
+
+df_numeric = df.select_dtypes(include=['float64', 'int64'])
+sns.heatmap(df_numeric.corr(), annot=True, cmap='coolwarm', fmt='.2f', ax=ax)
 st.pyplot(fig)
 
 st.write("💡 **Tip:** Use sidebar sliders to input patient details and get predictions!")
