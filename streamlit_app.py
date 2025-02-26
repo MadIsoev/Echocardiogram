@@ -10,11 +10,11 @@ df = pd.read_csv("echocardiogram.data", sep=",", header=None, na_values="?", on_
 
 with st.expander('Data'):
   st.write("X")
-  X_raw = df.drop('species', axis=1)
+  X_raw = df.drop('still-alive', axis=1)
   st.dataframe(X_raw)
 
   st.write("y")
-  y_raw = df.species
+  y_raw = df.still-alive
   st.dataframe(y_raw)
 
 
