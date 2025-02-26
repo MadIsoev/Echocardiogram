@@ -14,7 +14,7 @@ columns = ["survival", "still-alive", "age-at-heart-attack", "pericardial-effusi
 
 df.columns = columns
 
-with st.expander('Data'):
+with st.expander('Datas'):
   st.write("X")
   X_raw = df.drop('still-alive', axis=1)
   st.dataframe(X_raw)
