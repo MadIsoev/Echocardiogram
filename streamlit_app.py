@@ -4,7 +4,7 @@ import plotly.express as px
 
 st.title('Echocardiogram')
 
-st.write('Анализ набора данных Echocardiogram')
+st.write('Анализ набора данных Echocardiogramm')
 
 df = pd.read_csv("echocardiogram.data", sep=",", header=None, na_values="?", on_bad_lines="skip")
 
