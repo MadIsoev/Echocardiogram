@@ -14,8 +14,7 @@ st.title('💓 Echocardiogram Analysis')
 
 st.write('Анализ данных и предсказание выживаемости')
 
-data_url = "https://raw.githubusercontent.com/MadIsoev/Echocardiogram/master/echocardiogram.data"
-df = pd.read_csv(data_url, sep=",", header=None, na_values="?", on_bad_lines="skip")
+df = pd.read_csv("echocardiogram.data", sep=",", header=None, na_values="?", on_bad_lines="skip")
 
 column_names = [
     "survival", "still-alive", "age", "pericardial-effusion", "fractional-shortening",
@@ -101,7 +100,3 @@ sns.heatmap(df_numeric.corr(), annot=True, cmap='coolwarm', fmt='.2f', ax=ax)
 st.pyplot(fig)
 
 st.write("💡 **Tip:** Use sidebar sliders to input patient details and get predictions!")
-
-
-
-
